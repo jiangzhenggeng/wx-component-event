@@ -1,55 +1,13 @@
-# wxcode-addr
-微信小程序漂亮的地址选择器
+# 页面、组件之间通讯增强封装
 
-## 截图
-![Image text](https://github.com/jiangzhenggeng/wxcode-addr/blob/master/WX20170621-122959%402x.png)
+页面 page-a 包含组件 component-a, component-a 又包含 component-b 或者 component-b 又包含组件 component-c
 
-## 使用方式1
+这时候 page-a 与组件component-b和component-c，或者组件component-a和组件component-c之间通讯实现比较麻烦
 
-```html
-  <addr-select
-    show="{{showArea}}"
-    bind:close="closeArea"
-    bind:select="selectArea"
-  >
-    <view class="select" bindtap="openArea">点击我</view>
-  </addr-select>
-```
-## 属性
-show 是否显示
-## 方法
-close 关闭触发事件，选择完成也会触发该事件
+wx-component-event就是解决这种嵌套层级比较深的组件之间通讯
 
-select 选择完成触发该事件
+案例里都有使用方法，打开即可开箱及得
 
 
 
-## 使用方式2
-### API方式使用更灵活
-
-```html
-  <addr-select id="addr-select" />
-```
-
-```javascript
-    this.selectComponent('#addr-select-api')
-    //设置选择回调函数
-    .callback((areaSelect, component) => {
-        console.log(areaSelect)
-        this.setData({
-            addressApi: areaSelect
-        })
-        this.selectComponent('#dialog-toast')
-            .message('3秒后自动关闭地址选择组件').show()
-    
-        setTimeout(() => {
-            component.close()
-        }, 3000)
-    },true/*回调结束是否清除回调函数*/)
-    //设置默认选择
-    .setAddrSelect(this.data.addressApi || [{name: '贵州'}])
-    //设置了autoClose不自动关闭组件 回调里调用 component.close()可关闭组件
-       .autoClose(false)
-        .show()
-```
 
