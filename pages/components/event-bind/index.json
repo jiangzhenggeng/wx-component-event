@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "弹窗组件",
+  "backgroundColor": "#F0F0F0",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "app-container": "/app-components/app-container/index",
+    "app-ex-button": "/app-components/app-ex-button/index",
+    "component-a": "../event-bind-components/component-a/index"
+  }
+}

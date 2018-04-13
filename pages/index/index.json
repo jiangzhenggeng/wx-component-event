@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "极果试用小程序UI库",
+  "backgroundColor": "#F0F0F0",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "custom-button": "/components/custom-button/index",
+    "app-container": "/app-components/app-container/index",
+    "app-ex-button": "/app-components/app-ex-button/index"
+  }
+}
